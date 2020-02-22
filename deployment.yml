@@ -36,7 +36,10 @@ spec:
           - name: TZ
             value: "Europe/Berlin"
           - name: WEBPASSWORD
-            value: salehparsa
+            valueFrom:
+              secretKeyRef:
+               name: pihole-secret
+               key: PASSWORD
           - name: 'DNS1'
             value: '10.96.0.10'
           - name: 'DNS2'
