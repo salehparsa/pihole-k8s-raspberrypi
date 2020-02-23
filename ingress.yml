@@ -13,3 +13,7 @@ spec:
        backend:
          serviceName: pihole-service-tcp
          servicePort: 80
+     - path: /
+       backend:
+         serviceName: pihole-service-udp
+         servicePort: 53
