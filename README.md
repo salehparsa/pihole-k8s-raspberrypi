@@ -23,3 +23,14 @@ If you configure the secret through a manifest (JSON or YAML) file which has the
 # Recommendation:
 
 If you need to share the file in a public repository, I would recommend encrypting the `secret.yml` file by using [git-crypt](https://github.com/AGWA/git-crypt)
+
+## Services and Loadbalancer
+
+Since kubernetes doesn't have LoadBalancer for non cloud setup, I have used [Metallb](https://metallb.universe.tf/) in my setup. That's why you are seeing following `annotation`:
+
+```
+..
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "pihole"
+..
+```
