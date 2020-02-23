@@ -3,12 +3,15 @@ kind: Service
 metadata:
   name: pihole-service-tcp
   namespace: pihole
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "pihole"
 spec:
   selector:
     app: pihole
-  type: NodePort
+  type: LoadBalancer
   ports:
   - name: web
     nodePort: 30080
     port: 80
+    targetPort: 80
     protocol: TCP
