@@ -8,6 +8,7 @@ metadata:
     component: pihole
     tier: storage
 spec:
+  storageClassName: "local-storage"
   accessModes:
     - ReadWriteOnce
   volumeMode: Filesystem
